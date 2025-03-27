@@ -5,19 +5,19 @@
 		"version": "1.0.0",
 		"orientation": "portrait",
 		"icon": "./assets/images/icon.png",
-		"scheme": "CHANGE_ME",
+		"scheme": "change.me",
 		"userInterfaceStyle": "automatic",
 		"newArchEnabled": true,
 		"ios": {
 			"supportsTablet": true,
-			"bundleIdentifier": "CHANGE_ME"
+			"bundleIdentifier": "change.me"
 		},
 		"android": {
 			"adaptiveIcon": {
 				"foregroundImage": "./assets/images/adaptive-icon.png",
 				"backgroundColor": "#ffffff"
 			},
-			"package": "CHANGE_ME"
+			"package": "CHANGE.ME"
 		},
 		"web": {
 			"bundler": "metro",
