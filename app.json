@@ -1,58 +1,59 @@
 {
-	"expo": {
-		"name": "CHANGE_ME",
-		"slug": "CHANGE_ME",
-		"version": "1.0.0",
-		"orientation": "portrait",
-		"icon": "./assets/images/icon.png",
-		"scheme": "change.me",
-		"userInterfaceStyle": "automatic",
-		"newArchEnabled": true,
-		"ios": {
-			"supportsTablet": true,
-			"bundleIdentifier": "change.me"
-		},
-		"android": {
-			"adaptiveIcon": {
-				"foregroundImage": "./assets/images/adaptive-icon.png",
-				"backgroundColor": "#ffffff"
-			},
-			"package": "CHANGE.ME"
-		},
-		"web": {
-			"bundler": "metro",
-			"output": "server",
-			"favicon": "./assets/images/favicon.png"
-		},
-		"plugins": [
-			"expo-router",
-			"expo-secure-store",
-			[
-				"expo-splash-screen",
-				{
-					"image": "./assets/images/splash-icon.png",
-					"imageWidth": 200,
-					"resizeMode": "contain",
-					"backgroundColor": "#ffffff"
-				}
-			],
-			"react-native-edge-to-edge",
-			"expo-secure-store"
-		],
-		"experiments": {
-			"typedRoutes": true
-		},
-		"extra": {
-			"eas": {
-				"projectId": "CHANGE_ME"
-			}
-		},
-		"owner": "CHANGE_ME",
-		"updates": {
-			"url": "https://u.expo.dev/CHANGE_ME_PROJECT_ID"
-		},
-		"runtimeVersion": {
-			"policy": "appVersion"
-		}
-	}
+  "expo": {
+    "name": "CHANGE_ME",
+    "slug": "CHANGE_ME",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/icon.png",
+    "scheme": "change.me",
+    "userInterfaceStyle": "automatic",
+    "newArchEnabled": true,
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "change.me",
+      "appleTeamId": "4SYCFCCG34"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/images/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      },
+      "package": "CHANGE.ME"
+    },
+    "web": {
+      "bundler": "metro",
+      "output": "server",
+      "favicon": "./assets/images/favicon.png"
+    },
+    "plugins": [
+      "expo-router",
+      "expo-secure-store",
+      [
+        "expo-splash-screen",
+        {
+          "image": "./assets/images/splash-icon.png",
+          "imageWidth": 200,
+          "resizeMode": "contain",
+          "backgroundColor": "#ffffff"
+        }
+      ],
+      "react-native-edge-to-edge",
+      "expo-secure-store"
+    ],
+    "experiments": {
+      "typedRoutes": true
+    },
+    "extra": {
+      "eas": {
+        "projectId": "CHANGE_ME"
+      }
+    },
+    "owner": "CHANGE_ME",
+    "updates": {
+      "url": "https://u.expo.dev/CHANGE_ME_PROJECT_ID"
+    },
+    "runtimeVersion": {
+      "policy": "appVersion"
+    }
+  }
 }

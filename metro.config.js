@@ -12,7 +12,7 @@ const config = getDefaultConfig(__dirname, {
 });
 
 // Handle ESM/CJS compatibility
-config.resolver.unstable_enablePackageExports = true;
+config.resolver.unstable_enablePackageExports = false;
 config.resolver.resolveRequest = (context, moduleName, platform) => {
   if (moduleName === "jotai" || moduleName.startsWith("jotai/")) {
     //? Resolve to its CommonJS entry (fallback to main/index.js)

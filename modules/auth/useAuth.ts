@@ -2,11 +2,14 @@ import { useAtom } from "jotai";
 import { RESET, atomWithStorage } from "jotai/utils";
 import { storage } from "../storage/storage";
 import { supabaseClient } from "../supabase/supabase";
+import React from "react";
 
 type SessionUser = {
   id: string;
   email?: string;
 };
+
+const DEV_MODE = true;
 
 const authSessionUserAtom = atomWithStorage<SessionUser | null>(
   "auth-session-user",
@@ -26,6 +29,27 @@ const authSessionUserAtom = atomWithStorage<SessionUser | null>(
 );
 
 const useAuth = () => {
+  if (DEV_MODE) {
+    // Fake user for dev mode
+    const fakeUser: SessionUser = { id: 'dev-123', email: 'dev@example.com' };
+    // Use React state for fake session
+    const [sessionUser, setSessionUser] = React.useState<SessionUser | null>(fakeUser);
+
+    const login = async (_email: string, _password: string) => {
+      setSessionUser(fakeUser);
+    };
+
+    const logout = async () => {
+      setSessionUser(null);
+    };
+
+    const signup = async (_email: string, _password: string) => {
+      setSessionUser(fakeUser);
+    };
+
+    return { sessionUser, login, logout, signup };
+  }
+
   const [sessionUser, setSessionUser] = useAtom(authSessionUserAtom);
 
   const login = async (email: string, password: string) => {
