@@ -11,6 +11,21 @@ const config = getDefaultConfig(__dirname, {
   isCSSEnabled: true,
 });
 
+// Handle ESM/CJS compatibility
+config.resolver.unstable_enablePackageExports = true;
+config.resolver.resolveRequest = (context, moduleName, platform) => {
+  if (moduleName === "jotai" || moduleName.startsWith("jotai/")) {
+    //? Resolve to its CommonJS entry (fallback to main/index.js)
+    return {
+      type: "sourceFile",
+      //? require.resolve will pick up the CJS entry (index.js) since "exports" is bypassed
+      filePath: require.resolve(moduleName),
+    };
+  }
+
+  return context.resolveRequest(context, moduleName, platform);
+};
+
 // add nice web support with optimizing compiler + CSS extraction
 const { withTamagui } = require("@tamagui/metro-plugin");
 module.exports = wrapWithReanimatedMetroConfig(
